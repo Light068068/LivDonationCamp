@@ -13,26 +13,3 @@ menubtn.addEventListener("click", () => {
 //for active class
 const filteritem = document.querySelector(".filter-projects");
 const filterbox = document.querySelectorAll(".project-box");
-
-
-
-window.onload = () => {
-    //once window loaded
-    filteritem.onclick = (selectedItem) => {
-      if (selectedItem.target.classList.contains("item")) {
-        filteritem.querySelector(".f-active").classList.remove("f-active");
-        selectedItem.target.classList.add("f-active");
-        let filtername = selectedItem.target.getAttribute("data-filter");
-        filterbox.forEach((img) => {
-          let filterimgs = img.getAttribute("data-filter");
-          if (filterimgs == filtername || filtername == "all") {
-            img.classList.remove("hide");
-            img.classList.add("show");
-          } else {
-            img.classList.add("hide");
-            img.classList.remove("show");
-          }
-        });
-      }
-    };
-  };
